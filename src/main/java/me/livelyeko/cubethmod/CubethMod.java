@@ -2,7 +2,7 @@ package me.livelyeko.cubethmod;
 
 import me.livelyeko.cubethmod.block.CubethBlocks;
 import me.livelyeko.cubethmod.item.CubethItems;
-import me.livelyeko.cubethmod.networking.CubethMessages;
+import me.livelyeko.cubethmod.networking.payload.ExamplePayload;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
@@ -39,6 +39,8 @@ public class CubethMod implements ModInitializer {
         CubethItems.initialize();
         CubethBlocks.initialize();
 
-      //  PayloadTypeRegistry.playC2S().register();
+        PayloadTypeRegistry.playS2C().register(ExamplePayload.PACKET_ID, ExamplePayload.PACKET_CODEC);
     }
+
+
 }
