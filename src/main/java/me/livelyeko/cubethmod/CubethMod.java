@@ -40,6 +40,5 @@ public class CubethMod implements ModInitializer {
         CubethBlocks.initialize();
 
       //  PayloadTypeRegistry.playC2S().register();
-        // asdfkljsf
     }
 }
