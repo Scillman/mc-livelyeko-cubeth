@@ -4,6 +4,7 @@
   "package": "me.livelyeko.cubethmod.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "CakeBlockMixin"
   ],
   "client": [
   ],
