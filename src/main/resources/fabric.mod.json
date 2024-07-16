@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "cubethmod",
+  "version": "${version}",
+  "name": "CubethMod",
+  "description": "Mod for Cubeth",
+  "authors": [
+    "livelyeko"
+  ],
+  "contact": {
+    "repo": "https://github.com/PigzR/CubethMod"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/cubethmod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.livelyeko.cubethmod.client.CubethModClient"
+    ],
+    "main": [
+      "me.livelyeko.cubethmod.CubethMod"
+    ]
+  },
+  "mixins": [
+    "cubethmod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

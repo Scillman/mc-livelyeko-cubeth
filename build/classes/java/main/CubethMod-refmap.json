@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "me/livelyeko/cubethmod/mixin/CubethModMixin": {
+      "loadWorld": "Lnet/minecraft/server/MinecraftServer;method_3735()V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "me/livelyeko/cubethmod/mixin/CubethModMixin": {
+        "loadWorld": "Lnet/minecraft/server/MinecraftServer;method_3735()V"
+      }
+    }
+  }
+}

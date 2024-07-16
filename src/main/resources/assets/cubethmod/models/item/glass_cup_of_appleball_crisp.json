@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cubethmod:item/glass_cup_overlay",
+    "layer1": "cubethmod:item/glass_cup"
+  }
+}
