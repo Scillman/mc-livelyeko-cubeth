@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cubethmod:item/dinnerware/drink",
+    "layer1": "cubethmod:item/dinnerware/glass_cup"
+  }
+}

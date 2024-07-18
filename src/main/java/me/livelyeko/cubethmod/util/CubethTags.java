@@ -14,7 +14,7 @@ public class CubethTags {
     }
 
     public static class Items {
-        public static final TagKey<Item> GLASS_PLATE = createTag("glass_plate");
+        public static final TagKey<Item> DINNERWARE = createTag("dinnerware");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(CubethMod.MOD_ID, name));

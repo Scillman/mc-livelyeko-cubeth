@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "cubethmod:block/glass_cup"
+    "type=0": {
+      "model": "cubethmod:block/dinnerware/glass_cup"
+    },
+    "type=1": {
+      "model": "cubethmod:block/dinnerware/glass_cup_of_drink"
     }
   }
 }

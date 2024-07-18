@@ -23,7 +23,7 @@ Caused by: java.lang.ExceptionInInitializerError
 Caused by: java.lang.IllegalArgumentException: The min values need to be smaller or equals to the max values
 	at net.minecraft.util.shape.VoxelShapes.cuboid(VoxelShapes.java:54)
 	at net.minecraft.block.Block.createCuboidShape(Block.java:222)
-	at me.livelyeko.cubethmod.block.GlassPlate.<clinit>(GlassPlate.java:16)
+	at me.livelyeko.cubethmod.block.dinnerware.GlassPlate.<clinit>(GlassPlate.java:16)
 	... 10 more
 
 

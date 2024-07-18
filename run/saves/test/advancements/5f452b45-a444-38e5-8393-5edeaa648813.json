@@ -1,25 +1,31 @@
 {
   "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
-      "unlock_right_away": "2024-07-16 14:28:44 -0600"
+      "unlock_right_away": "2024-07-17 20:48:07 -0600"
     },
     "done": true
   },
   "minecraft:recipes/decorations/chest": {
     "criteria": {
-      "has_lots_of_items": "2024-07-16 14:28:44 -0600"
+      "has_lots_of_items": "2024-07-17 20:48:16 -0600"
+    },
+    "done": true
+  },
+  "minecraft:end/elytra": {
+    "criteria": {
+      "elytra": "2024-07-17 20:48:07 -0600"
     },
     "done": true
   },
   "minecraft:recipes/brewing/cauldron": {
     "criteria": {
-      "has_water_bucket": "2024-07-16 14:28:44 -0600"
+      "has_water_bucket": "2024-07-17 20:48:07 -0600"
     },
     "done": true
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:plains": "2024-07-16 14:28:45 -0600"
+      "minecraft:taiga": "2024-07-17 20:48:08 -0600"
     },
     "done": false
   },

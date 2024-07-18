@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "cubethmod:block/glass_plate"
+    "type=0": {
+      "model": "cubethmod:block/dinnerware/glass_plate"
+    },
+    "type=1": {
+      "model": "cubethmod:block/dinnerware/glass_plate_of_sliced_cake"
     }
   }
 }

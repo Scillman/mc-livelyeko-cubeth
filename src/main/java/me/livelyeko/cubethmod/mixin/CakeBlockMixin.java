@@ -1,24 +1,17 @@
 package me.livelyeko.cubethmod.mixin;
 
-import me.livelyeko.cubethmod.CubethMod;
 import me.livelyeko.cubethmod.block.CubethBlocks;
-import me.livelyeko.cubethmod.item.CubethItems;
-import me.livelyeko.cubethmod.item.GlassPlate;
 import me.livelyeko.cubethmod.util.CubethTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -26,6 +19,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
+
 
 @Mixin(CakeBlock.class)
 public class CakeBlockMixin {
@@ -48,13 +42,13 @@ public class CakeBlockMixin {
                 player.incrementStat(Stats.USED.getOrCreateStat(item));
                 return ItemActionResult.SUCCESS;
             }
-        } else if (stack.isIn(CubethTags.Items.GLASS_PLATE) && (Integer)state.get(((CakeBlock)(Object) this).BITES) <= ((CakeBlock)(Object) this).MAX_BITES) {
+        } else if (stack.isIn(CubethTags.Items.DINNERWARE) && state.get(CakeBlock.BITES) <= CakeBlock.MAX_BITES) {
             stack.decrement(1);
 
-            // need to add new plate object.
+
             player.sendMessage(Text.of("Took cake"));
 
-            world.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_POWDER_SNOW_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            world.playSound(null, pos, SoundEvents.BLOCK_POWDER_SNOW_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
             if(state.get(((CakeBlock)(Object) this).BITES) < 6) {
                 world.setBlockState(pos, (BlockState)state.with(((CakeBlock)(Object) this).BITES, state.get(((CakeBlock)(Object) this).BITES) + 1), 3);
@@ -64,7 +58,7 @@ public class CakeBlockMixin {
             }
 
             // Give plate of sliced cake to player.
-            ItemStack SlicedCake = new ItemStack(CubethBlocks.PLATE_OF_SLICED_CAKE, 1);
+            ItemStack SlicedCake = new ItemStack(CubethBlocks.GLASS_PLATE_OF_SLICED_CAKE, 1);
             boolean wasAdded =  player.getInventory().insertStack(SlicedCake);
 
             if(!wasAdded)

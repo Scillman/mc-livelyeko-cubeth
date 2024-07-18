@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "bundt_bites=0": {
+      "model": "cubethmod:block/food/pastry/bundt_cake"
+    },
+    "bundt_bites=1": {
+      "model": "cubethmod:block/food/pastry/bundt_cake_slice1"
+    },
+    "bundt_bites=2": {
+      "model": "cubethmod:block/food/pastry/bundt_cake_slice2"
+    },
+    "bundt_bites=3": {
+      "model": "cubethmod:block/food/pastry/bundt_cake_slice3"
+    },
+    "bundt_bites=4": {
+      "model": "cubethmod:block/food/pastry/bundt_cake_slice4"
+    },
+    "bundt_bites=5": {
+      "model": "cubethmod:block/food/pastry/bundt_cake_slice5"
+    },
+    "bundt_bites=6": {
+      "model": "cubethmod:block/food/pastry/bundt_cake_slice6"
+    },
+    "bundt_bites=7": {
+      "model": "cubethmod:block/food/pastry/bundt_cake_slice7"
+    }
+  }
+}
