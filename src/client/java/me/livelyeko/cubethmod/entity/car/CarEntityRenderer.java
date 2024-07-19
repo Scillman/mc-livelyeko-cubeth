@@ -35,10 +35,10 @@ public class CarEntityRenderer extends EntityRenderer<CarEntity> {
         super.render(entity, yaw, tickDelta, matrices, vertexConsumerProvider, light);
 
         RenderLayer renderLayer = this.model.getLayer(this.getTexture(entity));
-		if (renderLayer != null) {
-			VertexConsumer vertexConsumer = vertexConsumerProvider.getBuffer(renderLayer);
+        if (renderLayer != null) {
+            VertexConsumer vertexConsumer = vertexConsumerProvider.getBuffer(renderLayer);
             int overlay = OverlayTexture.packUv(OverlayTexture.getU(tickDelta), OverlayTexture.getV(false));
-			this.model.render(matrices, vertexConsumer, light, overlay, -1);
-		}
+            this.model.render(matrices, vertexConsumer, light, overlay, -1);
+        }
     }
 }
