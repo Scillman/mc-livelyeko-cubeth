@@ -1,8 +1,8 @@
 package me.livelyeko.cubethmod;
 
 import me.livelyeko.cubethmod.block.CubethBlocks;
+import me.livelyeko.cubethmod.entity.CubethEntities;
 import me.livelyeko.cubethmod.item.CubethItems;
-import me.livelyeko.cubethmod.networking.payload.ExamplePayload;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
@@ -12,7 +12,6 @@ import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
@@ -32,6 +31,8 @@ public class CubethMod implements ModInitializer {
             .noScrollbar()
             .build();
 
+
+
     @Override
     public void onInitialize() {
 
@@ -39,9 +40,8 @@ public class CubethMod implements ModInitializer {
 
         CubethItems.initialize();
         CubethBlocks.initialize();
+        CubethEntities.initialize();
 
-        PayloadTypeRegistry.playS2C().register(ExamplePayload.PACKET_ID, ExamplePayload.PACKET_CODEC);
+        //PayloadTypeRegistry.playS2C().register(SpawnPayload.PACKET_ID, SpawnPayload.PACKET_CODEC);
     }
-
-
 }

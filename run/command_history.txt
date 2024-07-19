@@ -1,13 +1,4 @@
 /time set day
-/gamemode survival
-/time set day
-/gamemode creative
-/gamemode survival
-/gamemode creative\
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/time set day
 /gamemode survival\
 /gamemode survival
 /gamemode creative
@@ -48,3 +39,12 @@
 /gamemode survival
 /gamemode creative
 /give @s minecraft:debug_stick
+/summon cubethmod:car
+/kill @e[type=cubethmod:car]
+/summon cubethmod:car
+/kill @e[type=cubethmod:car]
+/summon cubethmod:car
+/kill @e[type=cubethmod:car]
+/summon cubethmod:car
+/kill @e[type=cubethmod:car]
+/summon cubethmod:car
