@@ -18,10 +18,9 @@ import net.minecraft.world.World;
 public class GlassPlate extends Block {
     public static int MAX_VALUE = 1;
     public static IntProperty TYPE = IntProperty.of("type", 0, MAX_VALUE);
-    private static VoxelShape[] SHAPE = new VoxelShape[]{
-            Block.createCuboidShape(3, 0, 3,13, 1, 13),
-            Block.createCuboidShape(5, 0, 5,11, 11, 11),
-
+    private static VoxelShape[] SHAPE = new VoxelShape[] {
+            Block.createCuboidShape(3, 0, 3, 13, 1, 13),
+            Block.createCuboidShape(5, 0, 5, 11, 11, 11),
     };
 
     public GlassPlate(Settings settings, int value) {
@@ -46,8 +45,7 @@ public class GlassPlate extends Block {
     @Override
     public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
 
-        if(player.isCreative())
-        {
+        if (player.isCreative()) {
             player.playSound(SoundEvents.BLOCK_GLASS_BREAK, 1.0f, 1.0f);
         } else {
             player.playSound(SoundEvents.BLOCK_GLASS_PLACE, 1.0f, 1.0f);
@@ -59,8 +57,7 @@ public class GlassPlate extends Block {
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
 
-        if(state.get(TYPE) > 0)
-        {
+        if (state.get(TYPE) > 0) {
             BlockState newState = CubethBlocks.GLASS_PLATE.getDefaultState();
             world.setBlockState(pos, newState);
 
@@ -70,5 +67,4 @@ public class GlassPlate extends Block {
 
         return super.onUse(state, world, pos, player, hit);
     }
-
 }

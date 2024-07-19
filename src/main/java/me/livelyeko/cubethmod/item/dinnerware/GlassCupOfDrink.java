@@ -1,15 +1,15 @@
 package me.livelyeko.cubethmod.item.dinnerware;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.hit.HitResult;
-import net.minecraft.world.World;
+// import net.minecraft.client.MinecraftClient;
+// import net.minecraft.entity.player.PlayerEntity;
+// import net.minecraft.item.ItemStack;
+// import net.minecraft.sound.SoundEvents;
+// import net.minecraft.text.Text;
+// import net.minecraft.util.Hand;
+// import net.minecraft.util.TypedActionResult;
+// import net.minecraft.util.hit.HitResult;
+// import net.minecraft.world.World;
 
 public class GlassCupOfDrink extends GlassCup {
 
@@ -17,16 +17,18 @@ public class GlassCupOfDrink extends GlassCup {
         super(block, settings);
     }
 
-    @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    //public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user)
 
-        HitResult hit = MinecraftClient.getInstance().crosshairTarget;
+    // @Override
+    // public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 
-        if (hand == Hand.MAIN_HAND && hit.getType() != HitResult.Type.BLOCK) {
-            user.playSound(SoundEvents.ENTITY_GENERIC_DRINK, 1.0f, 1.0f);
-            user.sendMessage(Text.of("Gulp gulp gulp."));
-        }
+    //     HitResult hit = MinecraftClient.getInstance().crosshairTarget;
 
-        return TypedActionResult.success(user.getStackInHand(hand));
-    }
+    //     if (hand == Hand.MAIN_HAND && hit.getType() != HitResult.Type.BLOCK) {
+    //         user.playSound(SoundEvents.ENTITY_GENERIC_DRINK, 1.0f, 1.0f);
+    //         user.sendMessage(Text.of("Gulp gulp gulp."));
+    //     }
+
+    //     return TypedActionResult.success(user.getStackInHand(hand));
+    // }
 }

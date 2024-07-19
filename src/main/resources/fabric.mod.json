@@ -15,14 +15,18 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "me.livelyeko.cubethmod.client.CubethModClient"
+      "me.livelyeko.cubethmod.CubethModClient"
     ],
     "main": [
       "me.livelyeko.cubethmod.CubethMod"
     ]
   },
   "mixins": [
-    "cubethmod.mixins.json"
+    "cubethmod.mixins.json",
+    {
+      "config": "cubethmod.client.mixins.json",
+      "environment": "client"
+    }
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",

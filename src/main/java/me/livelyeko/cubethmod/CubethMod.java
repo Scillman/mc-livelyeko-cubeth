@@ -5,7 +5,6 @@ import me.livelyeko.cubethmod.entity.CubethEntities;
 import me.livelyeko.cubethmod.item.CubethItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -24,14 +23,12 @@ public class CubethMod implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     // Custom Item Group
-    public static final RegistryKey<ItemGroup> CUBETH_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of("cubethmod", "item_group"));
+    public static final RegistryKey<ItemGroup> CUBETH_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(MOD_ID, "item_group"));
     public static final ItemGroup CUBETH = FabricItemGroup.builder()
             .icon(() -> new ItemStack(Items.BEACON))
             .displayName(Text.of("Cubeth Assets"))
             .noScrollbar()
             .build();
-
-
 
     @Override
     public void onInitialize() {

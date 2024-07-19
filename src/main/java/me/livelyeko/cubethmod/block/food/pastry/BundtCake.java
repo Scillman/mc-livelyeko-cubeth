@@ -2,9 +2,10 @@ package me.livelyeko.cubethmod.block.food.pastry;
 
 import me.livelyeko.cubethmod.block.CubethBlocks;
 import me.livelyeko.cubethmod.util.CubethTags;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -26,7 +27,7 @@ import net.minecraft.world.event.GameEvent;
 public class BundtCake extends Block {
     public static final int MAX_BITES = 7;
     public static final IntProperty BITES = IntProperty.of("bundt_bites", 0, MAX_BITES);
-    protected static VoxelShape[] BITES_TO_SHAPE = new VoxelShape[]{
+    protected static VoxelShape[] BITES_TO_SHAPE = new VoxelShape[] {
             Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 8.0, 15.0),
             Block.createCuboidShape(2.0, 0.0, 1.0, 15.0, 8.0, 15.0),
             Block.createCuboidShape(3.0, 0.0, 1.0, 15.0, 8.0, 15.0),
@@ -40,7 +41,7 @@ public class BundtCake extends Block {
 
     public BundtCake(Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(BITES, 0));
+        this.setDefaultState(this.stateManager.getDefaultState().with(BITES, 0));
     }
 
     @Override
@@ -50,9 +51,8 @@ public class BundtCake extends Block {
 
     @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return BITES_TO_SHAPE[(Integer)state.get(BITES)];
+        return BITES_TO_SHAPE[state.get(BITES)];
     }
-
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
@@ -73,9 +73,9 @@ public class BundtCake extends Block {
     }
 
     @Override
-    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        Item item = stack.getItem();
-        if (stack.isIn(CubethTags.Items.DINNERWARE) && (Integer)state.get(BITES) <= (MAX_BITES)) {
+    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
+            PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (stack.isIn(CubethTags.Items.DINNERWARE) && (Integer) state.get(BITES) <= (MAX_BITES)) {
             stack.decrement(1);
 
             // need to add new plate object.
@@ -83,7 +83,7 @@ public class BundtCake extends Block {
 
             world.playSound(null, pos, SoundEvents.BLOCK_POWDER_SNOW_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
-            if(state.get(BITES) < MAX_BITES) {
+            if (state.get(BITES) < MAX_BITES) {
                 world.setBlockState(pos, state.with(BITES, state.get(BITES) + 1), 3);
             } else {
                 world.removeBlock(pos, false);
@@ -92,10 +92,9 @@ public class BundtCake extends Block {
 
             // Give plate of sliced cake to player.
             ItemStack SlicedCake = new ItemStack(CubethBlocks.GLASS_PLATE_OF_SLICED_CAKE, 1);
-            boolean wasAdded =  player.getInventory().insertStack(SlicedCake);
+            boolean wasAdded = player.getInventory().insertStack(SlicedCake);
 
-            if(!wasAdded)
-            {
+            if (!wasAdded) {
                 player.dropItem(SlicedCake, false);
             }
 
@@ -115,7 +114,7 @@ public class BundtCake extends Block {
             int i = state.get(BITES);
             world.emitGameEvent(player, GameEvent.EAT, pos);
             if (i < MAX_BITES) {
-                world.setBlockState(pos, (BlockState)state.with(BITES, i + 1), 3);
+                world.setBlockState(pos, (BlockState) state.with(BITES, i + 1), 3);
             } else {
                 world.removeBlock(pos, false);
                 world.emitGameEvent(player, GameEvent.BLOCK_DESTROY, pos);

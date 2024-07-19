@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class GlassCup extends Block {
     public static int MAX_VALUE = 1;
     public static IntProperty TYPE = IntProperty.of("type", 0, MAX_VALUE);
-    private static VoxelShape SHAPE = Block.createCuboidShape(5, 0, 5,11, 11, 11);
+    private static VoxelShape SHAPE = Block.createCuboidShape(5, 0, 5, 11, 11, 11);
 
     public GlassCup(Settings settings) {
         super(settings);
@@ -39,8 +39,7 @@ public class GlassCup extends Block {
     @Override
     public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
 
-        if(player.isCreative())
-        {
+        if (player.isCreative()) {
             player.playSound(SoundEvents.BLOCK_GLASS_BREAK, 1.0f, 1.0f);
         } else {
             player.playSound(SoundEvents.BLOCK_GLASS_PLACE, 1.0f, 1.0f);

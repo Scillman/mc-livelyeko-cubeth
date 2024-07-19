@@ -1,0 +1,11 @@
+{
+    "required": true,
+    "package": "me.livelyeko.cubethmod.mixin.client",
+    "compatibilityLevel": "JAVA_21",
+    "client": [
+      "WorldRenderMixin"
+    ],
+    "injectors": {
+      "defaultRequire": 1
+    }
+  }
